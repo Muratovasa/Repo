@@ -1,12 +1,12 @@
-public class MyTreadCaller extends Thread {
-
+public class Caller extends Thread {
     @Override
     public void run(){
-        for (int i=1; i<Elements.elementsQueue;i++){
+        int sleepTime = 1000;
+        for (int i = 1; i< Main.ELEMENTSQUEUE; i++){
             try {
-                Main.names.put("Звонок "+i);
+                Main.NAMES.put("Звонок "+i);
                 System.out.println("Поступил звонок "+i);
-                Thread.sleep(Elements.sleepTime);
+                Thread.sleep(sleepTime);
             } catch (InterruptedException e) {
                 return;
             }
