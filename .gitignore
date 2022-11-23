@@ -1,0 +1,9 @@
+/shelf/
+ *.class
+ /out/
+ *.iml
+ *.xml
+ !pom.xml
+ !.gitignore
+ logs/
+ /.idea/
