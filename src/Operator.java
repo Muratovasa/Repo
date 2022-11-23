@@ -1,12 +1,12 @@
 public class Operator extends Thread {
+    private static final int COUNTHREAD = 61;
+
     @Override
     public void run() {
-        int countThread = 61;
-        int sleepWork = 3000;
-        for (int i = 1; i < countThread; i++) {
+        for (int i = 1; i < COUNTHREAD; i++) {
             try {
-                System.out.println("Взяли " + Main.NAMES.take());
-                Thread.sleep(sleepWork);
+                System.out.println("Взяли звонок " +i+"\n");
+                Thread.sleep(ATC.sleepWork);
             } catch (InterruptedException e) {
                 return;
             }

@@ -8,3 +8,4 @@
  !pom.xml
  !.gitignore
  logs/
+ .idea/

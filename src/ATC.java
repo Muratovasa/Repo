@@ -1,16 +1,20 @@
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
+
 public class ATC extends Thread {
+    public static final BlockingQueue<String> CALL = new ArrayBlockingQueue<>(Main.ELEMENTSQUEUE);
+    public static int sleepWork = 3000;
+
     @Override
     public void run() {
-
-        int sleepWork = 3000;
         for (int i = 1; i < Main.ELEMENTSQUEUE; i++) {
-            Main.ATCWORK.add("Позвонить");
-            Main.ATCWORK.add("Взять звонок в работу");
-            System.out.println(Main.ATCWORK.get(i));
             try {
+                CALL.put("Позвонить");
+                CALL.put("Взять звонок в работу");
+                System.out.println(CALL.take());
                 Thread.sleep(sleepWork);
             } catch (InterruptedException e) {
-            return;
+                e.printStackTrace();
             }
         }
     }
