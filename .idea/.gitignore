@@ -1,6 +1,5 @@
 # Default ignored files
 /shelf/
- /workspace.xml
  *.class
  /out/
  *.iml
@@ -8,4 +7,4 @@
  !pom.xml
  !.gitignore
  logs/
- .idea/
+ /.idea/
